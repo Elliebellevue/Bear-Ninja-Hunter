@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Coding assignment # 6 </title>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <p id="u-picked"></p>
+    <p id="c-picked"></p>
+    <script>
+        let username = prompt('Welcome to Bear Hunter')
+
+        let player = `${username}`
+
+        alert('Hi ' + player + ` Let's Play!!`);
+        let choose = prompt('Who are you; Bear, Ninja or Hunter?')
+        console.log(player +", You picked " + choose + "!")
+        console.log("The computer picked" + choose + "!")
+
+        document.getElementById("u-picked").innerHTML = player +", You picked " + choose + "!";
+        document.getElementById("c-picked").innerHTML = "The computer picked" + choose + "!";
+    </script>
+</body>
+
+</html>
+
