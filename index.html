@@ -12,15 +12,21 @@
     <p id="u-picked"></p>
     <p id="c-picked"></p>
     <script>
+        // Prompt the username
         let username = prompt('Welcome to Bear Hunter')
 
         let player = `${username}`
-
+        // Print out welcome text
         alert('Hi ' + player + ` Let's Play!!`);
-        let choose = prompt('Who are you; Bear, Ninja or Hunter?')
-        console.log(player +", You picked " + choose + "!")
-        console.log("The computer picked" + choose + "!")
 
+        // Prompt the choose
+        let choose = prompt('Who are you: Bear, Ninja or Hunter?')
+
+        // Print out on console
+        console.log(player +", You picked " + choose + "!")
+        console.log("The computer picked " + choose + "!")
+
+        // Print out on HTML page
         document.getElementById("u-picked").innerHTML = player +", You picked " + choose + "!";
         document.getElementById("c-picked").innerHTML = "The computer picked " + choose + "!";
     </script>
