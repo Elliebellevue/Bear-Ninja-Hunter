@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Coding assignment # 6 </title>
-<link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Coding assignment # 6 </title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
     <p id="u-picked"></p>
     <p id="c-picked"></p>
+    <p id="result"></p>
     <script>
         // Prompt the username
         let username = prompt('Welcome to Bear Hunter. Please type your name')
@@ -21,6 +22,7 @@
 
         // Prompt the choose
         let choose = prompt('Who are you: Bear, Ninja or Hunter?')
+        choose = choose.toLowerCase();
 
         // Print out on console
         console.log(player + ", You picked " + choose + "!")
@@ -29,6 +31,53 @@
         // Print out on HTML page
         document.getElementById("u-picked").innerHTML = player +", You picked " + choose + "!";
         document.getElementById("c-picked").innerHTML = "The computer picked Bear!";
+
+        // hard coding computer's choice
+        let computer = "hunter";
+
+        // decide who will win
+        let result = "";
+        if (choose == "bear" && computer == "bear") {
+            result = "tie"
+        } else if (choose == "ninja" && computer == "ninja") {
+            result = "tie"
+        } else if (choose == "hunter" && computer == "hunter") {
+            result = "tie" 
+        } else if (choose == "bear" && computer == "ninja") {
+            result = "user"
+        } else if (choose == "ninja" && computer == "hunter") {
+            result = "user"
+        } else if (choose == "hunter" && computer == "bear") { 
+            result = "user"
+        } else if (choose == "hunter" && computer == "ninja"){ 
+            result = "computer"
+        }else if (choose == "bear" && computer == "hunter") {
+            result = "computer"
+        } else if (choose == "ninja" && computer == "bear") {
+            result = "computer"
+        } else {
+            result = "unknown"
+        }
+
+        // print the result based on who win
+        switch (result) {
+            case "tie":
+                console.log("Tie!!");
+                document.getElementById("result").innerHTML = "Tie!!"
+                break;
+            case "user":
+                console.log("You win!!");
+                document.getElementById("result").innerHTML = "You win!!"
+                break;
+            case "computer":
+                console.log("Computer wins!!");
+                document.getElementById("result").innerHTML = "Computer Wins!!"
+                break;
+            default:
+                console.log("Something went wrong")
+                document.getElementById("result").innerHTML = "Something went wrong"
+                break;
+        }
     </script>
 </body>
 
